@@ -1,0 +1,5 @@
+service: portfolio-www
+runtime: python37
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:

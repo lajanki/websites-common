@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Lauri Ajanki Portfolio</title>
+
+	<meta name="viewport" content="initial-scale=1.0,width=device-width">
+	<meta name="description" content="A collection of personal programming projects.">
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<!-- Google analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-96942541-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+
+
+</head>
+
+<body>
+	<!-- page wrapper -->
+	<div id="container-fluid">
+		
+		<div id="header-container">
+			<header id="site-header">Lauri Ajanki Portfolio</header>
+			<h4>Udacity Intro To Hadoop Exercise Solutions</h4>
+		</div>
+
+		<!-- sidebar -->
+		<div id="sidebar">
+
+			<div id="nav" class="nav nav-tabs nav-stacked">
+				<a href="./index.html" id="home-button" class="list-group-item">
+					<img src="./img/home-icon.png" alt="home" height="24px"> Home</a>
+				<a href="./index.html#about" class="list-group-item sub-page">
+					<img class="img-circle" src="./img/avatar.svg" alt="avatar" height="24px"> About</a>
+				<a href="http://lajanki.mbnet.fi/math/" class="list-group-item">
+					<img src="./img/gamma_icon.ico" alt="gamma" height="24px"> Math</a>
+				<a href="https://github.com/lajanki/" class="list-group-item">
+					<img src="./img/GitHub-Mark-32px.png" alt="github" height="24px"> GitHub</a>
+				<a href="mailto:lauri.ajanki@alumni.helsinki.fi" target="_top" class="list-group-item">
+					<img src="./img/mail.png" alt="email" height="24px"> Contact</a>
+			</div>
+		</div>
+
+
+		<!-- Bootstrap container for all pages -->
+		<div class="tab-content">
+
+			<!-- Third page for solutions to Hadoop excercises-->
+			<div id="hadoop" class="content tab-pane fade in active">
+				<h2>Hadoop</h2>
+				<p class="about-text">The following is a collection of solutions to selected excercises of Udacity's
+					<a href="https://www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617">Intro to Hadoop and MapReduce</a> course.</p>
+
+				<!--
+				store purchases
+				web server log
+				forum users
+				-->
+				<h4>Store purchases (Lesson 3 Project Part I)</h4>
+				<p>Given a list of purchases made via a credit card accross different stores, write MapReduce programs to answer the following problems.
+				Input data: <a href="http://content.udacity-data.com/courses/ud617/purchases.txt.gz">purchases.txt.gz</a> (links to content.udacity-data.com, 38.5MB)</p>
+				<table>
+					<tr>
+						<th>By category</th>
+						<td class="prblem-description">Provide a sales breakdown by product category across all of our stores.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project I/by_category/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project I/by_category/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Highest sales</th>
+						<td class="prblem-description">Find the monetary value for the highest individual sale for each separate store.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project I/by_store/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project I/by_store/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Total sales</th>
+						<td class="prblem-description">Find the total sales value across all the stores, and the total number of sales. Assume there is only one reducer.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project I/total_sales/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project I/total_sales/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+				</table>
+
+				<h4>Web log (Lesson 3 Project Part II)</h4>
+				<p>Given a typical web server log file, write MapReduce programs to answer the following problems.
+				Input data: <a href="http://content.udacity-data.com/courses/ud617/access_log.gz">access_log.gz</a> (links to content.udacity-data.com, 54.5MB)</p>
+				<table>
+					<tr>
+						<th>Page hits</th>
+						<td class="prblem-description">Write a MapReduce program which will display the number of hits for each different file on the Website.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project II/page_hits/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project II/page_hits/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Hits from</th>
+						<td class="prblem-description">Write a MapReduce program which determines the number of hits to the site made by each different IP address.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project II/hits_from/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project II/hits_from/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Most popular file</th>
+						<td class="prblem-description">Find the most popular file on the website, ie. the file listed the most number of times in access_log.</td>
+						<td><a href="./udacity-hadoop-solutions/lesson3 project II/most_popular/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson3 project II/most_popular/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+				</table>
+
+				<h4>User forum data (Final project)</h4>
+				<p>Given a dump of the Udacity user forums as .tsv files, write MapReduce programs to answer the following problems.
+				Input data: <a href="http://content.udacity-data.com/course/hadoop/forum_data.tar.gz">forum_data.tar.gz</a> (links to content.udacity-data.com, 39.7MB)</p>
+				<table>
+					<tr>
+						<th>Peak hour</th>
+						<td class="prblem-description">Find for each student what is the hour during which the student has posted the most posts.</td>
+						<td><a href="./udacity-hadoop-solutions/final_project/post_activity/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/final_project/post_activity/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Post lengths</th>
+						<td class="prblem-description">Write a MapReduce program that would process the forum_node data and output the length of the post and the average
+							answer length for each post.</td>
+						<td><a href="./udacity-hadoop-solutions/final_project/post_length/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/final_project/post_length/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Top tags</th>
+						<td class="prblem-description">Write a MapReduce program that would output the Top 10 tags, ordered by the number of questions they appear in.</td>
+						<td><a href="./udacity-hadoop-solutions/final_project/top_tags/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/final_project/top_tags/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Posters</th>
+						<td class="prblem-description">Write a MapReduce program that for each forum thread gives a list of students that have posted there.</td>
+						<td><a href="./udacity-hadoop-solutions/final_project/posters/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/final_project/posters/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+					<tr>
+						<th>Combining posters with posts</th>
+						<td class="prblem-description">Write mapper and reducer code that combines forum post data with reputation data of the poster. (Lesson 4 Quiz: Combine Datasets)</td>
+						<td><a href="./udacity-hadoop-solutions/lesson4 forum/mapper.py" target="_blank">mapper.py</a>
+							<a href="./udacity-hadoop-solutions/lesson4 forum/reducer.py" target="_blank">reducer.py</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

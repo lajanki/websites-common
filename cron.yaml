@@ -1,0 +1,20 @@
+cron:
+- description: 'Portfolio: Daily showerthoughts refresh'
+  schedule: every day 17:42
+  target: portfolio-www
+  url: /_update_showerthoughts
+
+- description: 'Date profiler: Weekly autocomplete cache refresh'
+  schedule: every monday 09:00
+  target: date-profiler
+  url: /_refresh
+
+- description: 'Game descriptor: Weekly model retrain'
+  schedule: every tuesday 05:13
+  target: game-descriptor
+  url: /_train
+
+- description: 'Game descriptor: batch parse new description content'
+  schedule: every 10 minutes from 01:00 to 01:58
+  target: game-descriptor
+  url: /_parse_descriptions

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<title>Lauri Ajanki Portfolio</title>
+
+	
+	<meta name="viewport" content="initial-scale=1.0,width=device-width">
+	<meta name="description" content="A collection of personal programming projects.">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
+
+	<!-- Bootstrap 3-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Custom js event handlers-->
+	<script type="text/javascript" src="{{ url_for('static', filename='handlers.js') }}" defer></script>
+	
+	<!-- Google analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-96942541-1', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+</head>
+
+<body>
+	<!-- page wrapper -->
+	<div id="container-fluid">
+		
+		<div id="header-container">
+			<header id="site-header">Lauri Ajanki Portfolio</header>
+			<h4>A collection of personal projects</h4>
+		</div>
+
+		<!-- sidebar -->
+		<div id="sidebar">
+
+			<div id="nav" class="nav nav-tabs nav-stacked">
+				<a href="#home" id="home-button" class="list-group-item" data-toggle="tab">
+					<img src="{{ url_for('static', filename='./img/home-icon.png') }}" alt="home" height="24px"> Home</a>
+				<a href="#about" class="list-group-item sub-page" data-toggle="tab">
+					<img class="img-circle" src="{{ url_for('static', filename='./img/avatar.svg') }}" alt="avatar" height="24px"> About</a>
+				<a href="http://lajanki.mbnet.fi/math/" class="list-group-item">
+					<img src="{{ url_for('static', filename='./img/gamma_icon.ico') }}" alt="gamma" height="24px"> Math</a>
+				<a href="hadoop_solutions.html" class="list-group-item sub-page">
+					<img src="{{ url_for('static', filename='./img/Hadoop-Logo.png') }}" alt="hadoop" height="24px"> Hadoop</a>
+				<a href="https://github.com/lajanki/" class="list-group-item">
+					<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" alt="github" height="24px"> GitHub</a>
+				<a href="mailto:lauri.ajanki@alumni.helsinki.fi" target="_top" class="list-group-item">
+					<img src="{{ url_for('static', filename='./img/mail.png') }}" alt="email" height="24px"> Contact</a>
+			</div>
+
+			<!-- cowsay container -->
+			<div id="cowsay">
+				<h4>Bessie Says:</h4>
+				<pre id="cowsay-pre"></pre>
+				<p style="font-size: 12px"><a id=new-thought style="cursor: pointer">refresh</a><br/>
+				showerthoughts from <a href="https://www.reddit.com/r/Showerthoughts/">reddit/r/Showerthoughts</a><br/>
+				online cowsay by <a href="http://cowsay.morecode.org/">http://cowsay.morecode.org/</a></p>
+			</div>	
+		</div>
+
+
+		<!-- Bootstrap container for all pages -->
+		<div class="tab-content">
+
+			<div id="home" class="content tab-pane fade in active">
+
+				<!-- Alarmpi -->
+				<div class="project-card">
+					<div id="alarmpi-icon" class="photo">
+						<img src="{{ url_for('static', filename='./img/alarmpi.png') }}" class="img-rounded" alt="clock GUI">
+					</div>
+					<div class="card-description">
+						<h3><a href=https://github.com/lajanki/alarmpi>Alarmpi</a><br/>
+							<small>Raspberry Pi clock radio</small></h3>
+	
+						<p><b>Details</b><br/>
+							A Python clock radio with PyQt5 GUI built primarily for a touchscreen and a customizable text-to-speech alarm. A fork of skiwithpete's
+							<a hre=https://github.com/skiwithpete/alarmpi>Alarmpi</a> project, which I though was neat and wanted to replicate for my own
+							purposes. I bought my second Pi for this project.</p>
+
+							<p>Features:</p>
+							<ul>
+								<li>Latest hedlines from BBC World News text-to-speech</li>
+								<li>Current weather text-to-speech</li>
+								<li>Departuring train schedules for my daily commute</li>
+								<li>Radio playback</li>
+								<li>Multiple text-to-speech engines</li>
+								<li>Support for extending to more content</li>
+							</ul>
+							
+						</p>
+							
+						<span style="border-top: 1px solid">October 2018 <a href="https://github.com/lajanki/alarmpi">
+							<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" height="16"></a>
+						</span>
+					</div>
+				</div>
+
+				<!-- Game descriptor -->
+				<div class="project-card">
+					<div id="game_descriptor-icon" class="photo">
+						<video id="descriptor_video" width="200">
+						  <source src="{{ url_for('static', filename='./img/game_description.webm') }}" type="video/webm">
+						Your browser does not support the video tag.
+						</video>
+	            	</div>
+					<div class="card-description">
+						<h3><a href="https://game-descriptor-dot-webhost-common.appspot.com">Game Descriptor</a><br/>
+							<small>Website that writes game descriptions based on Steam store</small></h3>
+
+						<p><b>Details</b><br/>
+							A <a href="https://en.wikipedia.org/wiki/Markov_chain">Markov chains</a> based text generator trained against a sample
+							of <a href="http://store.steampowered.com/">Steam Store</a> game descriptions. Includes randomly generated game tags
+							and a pattern based developer name.
+
+							The website is a Flask application running on Google App Engine. The generator is re-trained weekly using a random
+							set of game descriptions.
+						</p>
+						
+						<span style="border-top: 1px solid">August 2019 <a href="https://github.com/lajanki/markov_text_generator">
+							<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" height="16"></a>
+						</span>
+					</div>
+				</div>
+
+				<!-- Tweet Mapper -->
+				<div class="project-card">
+					<div id="tweet_mapper-icon" class="photo">
+						<a href="http://lajanki.mbnet.fi/tweet_mapper/index.html">
+							<img src="{{ url_for('static', filename='./img/tweet-mapper-screenshot.png') }}" class="img-rounded" alt="map marker">
+						</a>
+	            	</div>
+					<div class="card-description">
+						<h3><a href="http://lajanki.mbnet.fi/tweet_mapper/index.html">Tweet Mapper</a><br/>
+							<small>Website for mapping tweets to a Google Map and showing trending topics</small></h3>
+						<ul>
+							<li>Find tweets near map coordinates</li>
+							<li>Plot recent timeline on a map</li>
+							<li>Show recent timeline statistics</li>
+							<li>Show worlwide and country specific trending topics</li>
+						</ul>
+						<p><b>Details</b><br/>
+							A custom map using <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps JavaScript API</a> connected to a
+							PHP server script querying Twitter's <a href="https://dev.twitter.com/rest/public/search">Search API</a> for tweets. Clicking on the
+							map will attempt to find a random sample of tweets near that location. Can also be used to map a user's recent timeline and computes
+							some user statistics from that timeline.
+						</p>
+						<p>
+							Trending data is pulled from Twitter periodically and stored in a local cache on the server. Additionally, a database is used to
+							store recent history of a trending topic and displayed in a chart.
+						</p>
+						
+						<span style="border-top: 1px solid">October 2016 <a href="https://github.com/lajanki/tweet_mapper">
+							<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" height="16"></a>
+						</span>
+					</div>
+				</div>
+
+				<!-- Date Profiler -->
+				<div class="project-card">
+					<div id="date-profiler" class="photo">
+						<!-- top image for a piece of letter -->
+						<img src="{{ url_for('static', filename='./img/letter.png') }}" width="100%" style="padding-bottom: 7px">
+						<!-- bottom image for Google autocomplete -->
+						<img src=" {{ url_for('static', filename='./img/google-autocomplete_short.png') }}" alt="heart letter" width="100%">
+	            	</div>
+					<div class="card-description">
+						<h3><a href="https://date-profiler-dot-webhost-common.appspot.com">Date Profiler</a><br/>
+							<small>Website generating online dating profiles by filling templates using Google autocomplete</small></h3>
+						<blockquote class="blockquote">
+							<p class="m-b-0">I love to socialize, embrace life and I am <strong>using a loat of</strong> electricity if I say so myself!</p>
+						</blockquote>
+
+						<p><b>Details</b><br/>
+							The backend is a Flask application filling a set of dating profile samples labelled with prefixes acting as input
+							to Google's autocomplete API. Profile templates are filled from a local cache of autocomplete responses in order
+							to reduce latency and outgoing API calls. The cache is refreshed weekly. Powered by Google App Engine.
+						</p>
+
+						<span style="border-top: 1px solid">August 2019</span>
+
+					</div>
+				</div>
+
+				<!-- Little Youtube -->
+				<div class="project-card">
+					<!-- embedded timeline created with https://publish.twitter.com/#-->
+					<div id="date-profiler" class="photo">
+						<a class="twitter-timeline"
+							data-width="220"
+							data-height="200"
+							data-tweet-limit="1"
+							data-cards="hidden"
+							data-chrome="nofooter,noheader"
+							href="https://twitter.com/little_youtube?ref_src=twsrc%5Etfw">Tweets by little_youtube
+						</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+
+					<div class="card-description" style="height: 240px">  <!-- dirty hack to make sure the tweet widget has enough space -->
+						<h3><a href="https://twitter.com/little_youtube">@little_youtube</a><br/>
+							<small>Twitter bot searching for old YouTube videos with no views</small></h3>
+
+
+						<p><b>Details</b><br/>
+							A Python script performing a YouTube search using the <a href="https://developers.google.com/youtube/v3/">YouTube Data API</a>.
+							Since view count cannot be used as a search parameter, the scripts reads a batch of search terms from a dictionary file,
+							performs the search and stores links to zero view items to a result file. The links are then tweeted one by one until
+							the next batch is processed.
+						</p>
+
+						<span style="border-top: 1px solid">August 2015 <a href="https://github.com/lajanki/youtube_search">
+							<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" height="16"></a>
+						</span>
+					</div>
+				</div>
+
+				<!-- Quote Bot -->
+				<div class="project-card">
+					<div id="quote_bot_card" class="photo">
+						<a class="twitter-timeline"
+						data-width="220"
+						data-height="200"
+						data-tweet-limit="1"
+						data-cards="hidden"
+						data-chrome="nofooter,noheader"
+						href="https://twitter.com/quote_bot_6?ref_src=twsrc%5Etfw">Tweets by quote_bot_6
+					</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	            	</div>
+					<div class="card-description">
+						<h3><a href="https://twitter.com/quote_bot_6">@quote_bot_6</a><br/>
+							<small>Twitter bot randomizing famous quotes</small></h3>
+
+						<blockquote class="blockquote">
+							<p class="m-b-0">There's no such thing as a peaceful lunch.</p>
+							<footer class="blockquote-footer">English Proverb</footer>
+						</blockquote>
+
+						<p><b>Details</b><br/>
+							A Python script randomizing actual quotes and facts by replacing randomly chosen adjectives, nouns and verbs
+							with matching words. Replacing words are pulled from a word class database which also stores the original quotes.
+						</p>
+						<p>Python's <a href="http://www.nltk.org/">Natural Language Toolkit</a> is used to both tokenize the input quotes into
+							word classes and to ensure that words are stored correctly in the database.</p>
+
+						<span style="border-top: 1px solid">July 2015 <a href="https://github.com/lajanki/quote_randomizer">
+							<img src="{{ url_for('static', filename='./img/GitHub-Mark-32px.png') }}" height="16"></a>
+						</span>
+					</div>
+				</div>
+
+				<!-- Knight's Tour -->
+				<div class="project-card">
+					<div id="knight-icon" class="photo">
+						<a href="http://lajanki.mbnet.fi/math/misc/knight.html">
+							<img id="chess-img" src="{{ url_for('static', filename='./img/knight_fill_static.png') }}" alt="chess knight's moves" width="100%">
+						</a>
+	            	</div>
+					<div class="card-description">
+						<h3><a id="knight-header" href="http://lajanki.mbnet.fi/math/misc/knight.html">Knight's Tour</a><br/>
+							<small>JavaScript games on chess related problems, including
+								<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Knight's Tour</a> and
+								<a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle">Nqueens</a>
+							</small></h3>
+						<p>Finnish only <img src="{{ url_for('static', filename='./img/fin-flag.png') }}" alt="Finnish flag" height="12px"></p>
+
+						<p><b>Details</b><br/>
+						A website introducing some math related chess problems and offering a JavaScript platform to solve them.
+						Users can try the problems with different board sizes as well as using a heuristic algorithm for the Knight's Tour problem.
+						</p>
+						<p>The chess board is implemented with an HTML5 Canvas element together with some drawing function.</p>
+
+						<span style="border-top: 1px solid">June 2015</span>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- ******************************************************************************************************************** -->
+
+			<!-- Second page for "About" section -->
+			<div id="about" class="content tab-pane fade">
+				<h2>About</h2>
+				<img src="{{ url_for('static', filename='./img/avatar.svg') }}" class="img-circle" height="128px">
+				<p class="about-text">I am a mathematician interested in data science and programming. I received my master's degree in mathematics
+					in 2013 with a minor in computer science.
+				</p>
+
+				<p class="about-text">In spring 2015 I bought a Raspberry Pi Model 2 in order to teach myself some PHP and web server basics.
+					Rather than doing that I quickly found myself toying with the camera module creating timelapse videos and reading about
+					the things other people used their Pis.
+				</p>
+
+				<p class="about-text">Around that time I started paying attention to content with clever ideas behind them posted to Reddit.
+					<a href="http://www.petittube.com/">PetitTube</a>, a website that streams YouTube videos no one has ever seen, was an early
+					inspiration to start figuring out how to build such a system and to put the Pi to actual use. I had already grown to like
+					Python but had no experience making HTTP requests or using website APIs. After figuring out how to read the (rather extensive)
+					documentation Google has for their YouTube Data API, I managed to make something similar. I chose to use Twitter as a platform
+					since writing a Twitter bot seemed to be a popular way to get started with a Pi.
+				</p>
+
+				<p class="about-text">Eventually, I did learn how Apache works and how to make AJAX requests to a server script when I needed a website
+					as a frontend to one of my projects. I was not surprised to learn that neither PHP nor JavaScript are among people's favorite languages.
+				</p>
+
+				<p class="about-text">I've also written some articles for my <a href="http://lajanki.mbnet.fi/math/">math page</a>. They are mostly
+					to teach myself new concepts but occasionally to give a deeper background to a high school level concept.
+				</p>
+
+				<p class="about-text">Currently I'm looking to shorten the list of math articles to write about as well as transforming one of my
+					Pi bots to better utilize data analysis tools to solve a certain problem.
+				</p>
+			</div>
+		</div>
+
+			<footer id="site-footer">
+			</footer>
+
+	</div>
+
+</body>
+</html>

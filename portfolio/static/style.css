@@ -1,0 +1,131 @@
+#header-container {
+	border-bottom: 1px solid;
+	margin: 10px 24% 20px 12%;
+}
+
+#site-header {
+	font-size: 36px;
+}
+
+#sidebar {
+	float: right;
+	margin-right: 15%;
+	width: 370px;
+}
+
+#nav {
+	width: 120px;
+}
+
+#cowsay {
+	margin-top: 100px;
+	border: 1px solid;
+	border-radius: 7px;
+	padding: 0px 5px;
+	background-color: #e0ebf9;
+}
+
+#cowsay > h4 {
+	text-align: center;
+}
+
+#cowsay > pre {
+	background-color: #e0ebf9;
+	border: none;
+	padding: 0px 9px;
+}
+
+.content {
+	margin-left: 16%;
+	width: 45%;
+}
+
+.list-group > a {
+	padding-left: 10px;
+}
+
+.project-card {
+	/*height: 320px;*/
+	border-bottom: 1px solid;
+}
+
+.photo {
+	width: 200px;
+	float: left;
+}
+
+.card-description {
+	margin-left: 210px;
+}
+
+#descriptor_video {
+	cursor: pointer;
+}
+
+#alarmpi-icon img {
+	max-width: 200px;
+}
+
+#tweet_mapper-icon {
+	height: 100%;
+}
+
+#tweet_mapper-icon img {
+	width: 90%;
+	display: block;
+	margin: auto;
+}
+
+#quote_bot_card, #little_youtube_card {
+	display: none;
+}
+
+#date-profiler:hover {
+	cursor: pointer;
+}
+
+
+/* spinning loader while fetching timeline */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+	position: relative;
+    left: 45px;
+    top: 60px;
+    float:left;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+a.twitter-timeline {
+	display: none;
+}
+
+/* reduce font size of quote boxes */
+blockquote > p {
+	font-size: 14px;
+}
+
+#about > img {
+	float: left;
+}
+
+.about-text {
+	font-size: 20px;
+}
+
+.prblem-description {
+	width: 60%;
+	padding: 0 5px;
+}
+
+th {
+	width: 15%;
+} 
